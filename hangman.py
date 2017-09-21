@@ -83,10 +83,12 @@ def hangman(secretWord):
         userLetterGuess = ''
         while not userLetterGuess.isalpha():
             userLetterGuess = raw_input("Guess a letter ('?' to see letters already guessed): ")
-            if(userLetterGuess in lettersGuessed):
+            if(len(userLetterGuess) > 1):
+                userLetterGuess = ''
+            elif(userLetterGuess in lettersGuessed):
                 print("You guessed that letter already")
                 userLetterGuess = ''
-            if(userLetterGuess == "?"):
+            elif(userLetterGuess == "?"):
                 print("".join(lettersGuessed))
         # Add UserGuess to LettersGuessed
         lettersGuessed.append(userLetterGuess)
