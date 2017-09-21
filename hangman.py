@@ -96,7 +96,10 @@ def hangman(secretWord):
                 print("You guessed the Word " + secretWord + "! Congrats!")
         else:
             guessesLeft -= 1
-            print("Nope! Guess Again! You have " + str(guessesLeft) + " guesses left.")
+            if guessesLeft > 0:
+                print("Nope! Guess Again! You have " + str(guessesLeft) + " guesses left.")
+            else:
+                print("You Failed! The word was " + secretWord + "...")
 
 
 secretWord = loadWord()
